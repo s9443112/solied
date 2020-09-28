@@ -27,7 +27,9 @@ class DetailItem extends React.Component {
                             <Grid item xs={1} md={1} lg={1}>
                                 {this.props.power === true ?
                                     <img src={`${process.env.PUBLIC_URL}/Green_Light_Icon.svg`} alt="logo" style={{ width: 40 }}></img> :
-                                    <img src={`${process.env.PUBLIC_URL}/Red_Light_Icon.svg`} alt="logo" style={{ width: 40 }}></img>
+                                    this.props.power === false ?
+                                        <img src={`${process.env.PUBLIC_URL}/Red_Light_Icon.svg`} alt="logo" style={{ width: 40 }}></img> :
+                                        <img src={`${process.env.PUBLIC_URL}/Gray_Light_Icon.svg`} alt="logo" style={{ width: 40 }}></img>
                                 }
                                 {/* <PowerSettingsNewIcon style={{ color: this.props.power === true ? "green" : "red", fontSize: '35px' }} /> */}
                             </Grid>

@@ -30,6 +30,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import ShowChartIcon from '@material-ui/icons/ShowChart';
 import HistoryIcon from '@material-ui/icons/History';
 import style from '../../style'
+import * as request from '../../request/index'
 
 class Sliderbar extends React.Component {
 
@@ -37,11 +38,21 @@ class Sliderbar extends React.Component {
     super(props)
     this.state = {
       open: false,
-      route: 1
+      route: 1,
+      info: {
+        "function_name": [],
+        "function_path": []
+      }
     }
   }
 
-  
+  async componentDidMount() {
+    let info = await request.info()
+    // console.log(info)
+    this.setState({ info: info })
+  }
+
+
 
   handleDrawerOpen = () => {
     this.setState({ open: true });
@@ -53,47 +64,75 @@ class Sliderbar extends React.Component {
   render() {
     const { classes } = this.props;
 
+
+
+    const { function_name, function_path, function_icon } = this.state.info;
+
+    let ListBuffer = []
+    for (let i in function_name) {
+      // console.log(function_name[i])
+      // console.log(function_path[i])
+      ListBuffer.push(
+        <ListItem key={i} button component={Link} to={`${process.env.PUBLIC_URL}${function_path[i]}`}>
+          <ListItemIcon>
+            {/* <HomeIcon style={{ color: 'white' }} /> */}
+            {function_icon[i] === 'DashboardIcon' ? <DashboardIcon style={{ color: 'white' }} /> :
+              function_icon[i] === 'ShowChartIcon' ? <ShowChartIcon style={{ color: 'white' }} /> :
+              function_icon[i] === 'HistoryIcon' ? <HistoryIcon style={{ color: 'white' }} /> :
+              <LayersIcon style={{ color: 'white' }} />  }
+          </ListItemIcon>
+          <ListItemText primary={function_name[i]} />
+        </ListItem>
+      )
+    }
     const mainListItems = (
       <div style={{ color: 'white' }}>
-        <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/home`}>
-          <ListItemIcon>
-            <HomeIcon style={{ color: 'white' }} />
-          </ListItemIcon>
-          <ListItemText primary="Home" />
-        </ListItem>
-        <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/dashboard`} >
-          <ListItemIcon>
-            <DashboardIcon style={{ color: 'white' }} />
-          </ListItemIcon>
-          <ListItemText primary="戰情看板" />
-        </ListItem>
-        <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/statistics`}>
-          <ListItemIcon>
-            <ShowChartIcon style={{ color: 'white' }}  />
-          </ListItemIcon>
-          <ListItemText primary="數據統計" />
-        </ListItem>
-        <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/history`} >
-          <ListItemIcon>
-            <HistoryIcon style={{ color: 'white' }} />
-          </ListItemIcon>
-          <ListItemText primary="歷史檢視" />
-        </ListItem>
-        <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/login`} >
-          <ListItemIcon>
-            <BuildIcon style={{ color: 'white' }} />
-          </ListItemIcon>
-          <ListItemText primary="登入" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <LayersIcon style={{ color: 'white' }} />
-          </ListItemIcon>
-          <ListItemText primary="設定" />
-        </ListItem>
+        {ListBuffer}
       </div>
-    );
-    console.log(this.props.children)
+    )
+
+
+    // const mainListItems = (
+    //   <div style={{ color: 'white' }}>
+    //     <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/home`}>
+    //       <ListItemIcon>
+    //         <HomeIcon style={{ color: 'white' }} />
+    //       </ListItemIcon>
+    //       <ListItemText primary="Home" />
+    //     </ListItem>
+    //     <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/dashboard`} >
+    //       <ListItemIcon>
+    //         <DashboardIcon style={{ color: 'white' }} />
+    //       </ListItemIcon>
+    //       <ListItemText primary="戰情看板" />
+    //     </ListItem>
+    //     <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/statistics`}>
+    //       <ListItemIcon>
+    //         <ShowChartIcon style={{ color: 'white' }} />
+    //       </ListItemIcon>
+    //       <ListItemText primary="數據統計" />
+    //     </ListItem>
+    //     <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/history`} >
+    //       <ListItemIcon>
+    //         <HistoryIcon style={{ color: 'white' }} />
+    //       </ListItemIcon>
+    //       <ListItemText primary="歷史檢視" />
+    //     </ListItem>
+    //     <ListItem button component={Link} to={`${process.env.PUBLIC_URL}/login`} >
+    //       <ListItemIcon>
+    //         <BuildIcon style={{ color: 'white' }} />
+    //       </ListItemIcon>
+    //       <ListItemText primary="登入" />
+    //     </ListItem>
+    //     <ListItem button>
+    //       <ListItemIcon>
+    //         <LayersIcon style={{ color: 'white' }} />
+    //       </ListItemIcon>
+    //       <ListItemText primary="設定" />
+    //     </ListItem>
+    //   </div>
+    // );
+    // console.log(this.props.children)
     // console.log(this.props)
     return (
       <div className={classes.root} >

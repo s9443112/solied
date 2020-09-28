@@ -14,12 +14,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-material-ui-carousel": "^1.8.3",
+    "react-qr-reader": "^2.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "recharts": "^1.8.5"
   },
   "scripts": {
-    "start": "env PORT=5000 REACT_APP_BACKEND_URL='http://127.0.0.1:8080' react-scripts start",
+    "start": "react-scripts start",
     "build": "env REACT_APP_BACKEND_URL='http://127.0.0.1:8080' react-scripts build && mv build soleil",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

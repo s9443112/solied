@@ -4,24 +4,24 @@ import React from 'react'
 import style from './style'
 class DetailTable extends React.Component {
     render() {
-        const { classNamees } = this.props;
+        const { classes } = this.props;
         return (
-            <table className="" cellSpacing={0} border={1}>
+            <table class="" cellspacing={0} border={1}>
                 <tbody>
                     <tr style={{height:'22px'}} >
                         <td
                             style={{fontFamily:'標楷體',fontSize:'12px',borderBottom:'2px solid',borderBottomColor:'#000000',minWidth:'50px'}}
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
                             style={{fontFamily:'標楷體',fontSize:'12px',borderBottom:'2px solid',borderBottomColor:'#000000',minWidth:'50px'}}
-                            colSpan={5}>
+                            colspan={5}>
                             <nobr>客戶:Bailey's(9904)</nobr>
                         </td>
 
                         <td
-                            colSpan={13}>
+                            colspan={13}>
                             <nobr>FM-025</nobr>
                         </td>
                     </tr>
@@ -44,11 +44,11 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={8} rowSpan={3}>
+                            colspan={8} rowspan={3}>
                             <nobr>B 式 派 工 單</nobr>
                         </td>
                         <td
-                            colSpan={7}>
+                            colspan={7}>
                             <nobr>製表日期：109/1/21</nobr>
                         </td>
                     </tr>
@@ -57,11 +57,11 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={4} rowSpan={2}>
+                            colspan={4} rowspan={2}>
                             <nobr>20005-B</nobr>
                         </td>
                         <td
-                            colSpan={7}>
+                            colspan={7}>
                             <nobr>開工日期：</nobr>
                         </td>
                     </tr>
@@ -71,13 +71,13 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={7}>
+                            colspan={7}>
                             <nobr>出貨日期：109/3/31</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={3}>
+                            colspan={3}>
                             <nobr>品名：</nobr>
                         </td>
                         <td
@@ -85,11 +85,11 @@ class DetailTable extends React.Component {
                             <nobr>序號</nobr>
                         </td>
                         <td
-                            colSpan={4}>
+                            colspan={4}>
                             <nobr>品號</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>Bailey's品號</nobr>
                         </td>
                         <td
@@ -129,7 +129,7 @@ class DetailTable extends React.Component {
                     </tr>
                     <tr >
                         <td
-                            colSpan={3} rowSpan={3}>
+                            colspan={3} rowspan={3}>
                             <nobr>替換式實體導板</nobr>
                         </td>
                         <td
@@ -137,11 +137,11 @@ class DetailTable extends React.Component {
                             <nobr>1/1</nobr>
                         </td>
                         <td
-                            colSpan={4}>
+                            colspan={4}>
                             <nobr>F28-B9-50A-QD-1</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>WPPM 28 SS50</nobr>
                         </td>
                         <td
@@ -186,11 +186,11 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={4}>
+                            colspan={4}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
@@ -240,11 +240,11 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={4}>
+                            colspan={4}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
@@ -289,7 +289,7 @@ class DetailTable extends React.Component {
                     </tr>
                     <tr >
                         <td
-                            colSpan={3} rowSpan={3}>
+                            colspan={3} rowspan={3}>
                             <nobr>機種：</nobr>
                         </td>
                         <td
@@ -297,11 +297,11 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={4}>
+                            colspan={4}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
@@ -345,15 +345,11 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={4}>
+                            colspan={4}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
-                            <nobr>&nbsp;</nobr>
-                        </td>
-                        <td
-                        >
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
@@ -364,26 +360,30 @@ class DetailTable extends React.Component {
                         >
                             <nobr>&nbsp;</nobr>
                         </td>
-                        <td rowSpan={2}>
+                        <td
+                        >
+                            <nobr>&nbsp;</nobr>
+                        </td>
+                        <td rowspan={2}>
                             <nobr>生產部 管理部 </nobr>
                         </td>
-                        <td rowSpan={2}>
+                        <td rowspan={2}>
                             <nobr>生管課 業務課 </nobr>
                         </td>
-                        <td rowSpan={2}>
+                        <td rowspan={2}>
                             <nobr>製一課 生技課</nobr>
                         </td>
-                        <td rowSpan={2}>
+                        <td rowspan={2}>
                             <nobr>製三課 製二課</nobr>
                         </td>
-                        <td rowSpan={2}>
+                        <td rowspan={2}>
                             <nobr>資材課 製四課</nobr>
                         </td>
-                        <td rowSpan={2}>
+                        <td rowspan={2}>
                             <nobr>品管課 採購課 </nobr>
                         </td>
                         <td
-                            rowSpan={2}>
+                            rowspan={2}>
                             <nobr> 電腦課 </nobr>
                         </td>
                     </tr>
@@ -393,11 +393,11 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={4}>
+                            colspan={4}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
@@ -415,737 +415,737 @@ class DetailTable extends React.Component {
                     </tr>
                     <tr >
                         <td
-                            colSpan={2} rowSpan={20}>
+                            colspan={2} rowspan={20}>
                             <nobr>製 作 流 程</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>工程 NO</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>1</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>2</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>3</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>4</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>5</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>6</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>7</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>8</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>生產日期</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>製程</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>發料</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>沖尾端孔</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>油壓壓平</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>退火</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>氧化膜磨除</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>銑削加工</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>IQC</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>油孔毛邊磨除</nobr>
                         </td>
                     </tr>
                     <tr ></tr>
                     <tr >
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>生產單位</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>資材</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>託外</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>品管</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製造</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>工程 NO</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>9</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>10</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>11</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>12</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>13</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>14</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>15</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>16</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>生產日期</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>製程</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>本體熱處理</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>IQC</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>油壓壓平</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>退火</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>平直度檢查</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>淬火</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>回火</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>平直度檢查</nobr>
                         </td>
                     </tr>
                     <tr ></tr>
                     <tr >
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>生產單位</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>託外</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>品管</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>工程 NO</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>17</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>18</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>19</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>20</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>21</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>22</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>23</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>24</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>生產日期</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>製程</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>惰孔鉚合</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>表面研磨</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>烤漆 </nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>IQC</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>磨槽 (視狀況)</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>網印</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>入鼻端側板替換組及鉚釘</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>導板及側板鉚合</nobr>
                         </td>
                     </tr>
                     <tr></tr>
                     <tr >
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>生產單位</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製一</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>託外</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製二</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製二</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製二</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製二</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製二</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>工程 NO</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>25</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>26</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>27</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>28</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>29</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>30</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>31</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>32</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>生產日期</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>製程</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>平直度檢查</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>雷射雕刻</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr> 包裝</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>成品檢驗</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>出貨</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr></tr>
                     <tr >
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>生產單位</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製二</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製二</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>製二</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>品管</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>業務</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={2} rowSpan={16}>
+                            colspan={2} rowspan={16}>
                             <nobr>注 意 事 項</nobr>
                         </td>
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>項次</nobr>
                         </td>
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>說 明</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={2} rowSpan={7}>
+                            colspan={2} rowspan={7}>
                             <nobr>1</nobr>
                         </td>
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>a.序號1 領庫存 F28-B9-63-QDG-1-1 (已沖切外形) 135 支(SAE5160)，從製程2開始生產。</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr> 33支跑完全程,另102支做至油孔毛邊磨除，防锈入庫。</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>b.領側板 3-22-01 100 支，F28-B9-50-QDU-1 23 支</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>c.製程13 導板入清洗機清洗完成後，需以噴槍將水份吹乾再回火。</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={2} rowSpan={2}>
+                            colspan={2} rowspan={2}>
                             <nobr>2</nobr>
                         </td>
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>序號1 雷射雕刻號碼 Bailey's品號</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr> ⅹⅹ(期碼)</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={2} rowSpan={5}>
+                            colspan={2} rowspan={5}>
                             <nobr>3</nobr>
                         </td>
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>序號1 圖面編號:MBA-A-07 網板編號: BA-A-07 網印顏色:Orange 021C 包裝方式:B 箱號: A30-A34</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            colSpan={2}>
+                            colspan={2}>
                             <nobr>4</nobr>
                         </td>
                         <td
-                            colSpan={16}>
+                            colspan={16}>
                             <nobr>依客戶資訊所示。</nobr>
                         </td>
                     </tr>
@@ -1177,19 +1177,19 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={3}>
+                            colspan={3}>
                             <nobr>生產部(經)副理</nobr>
                         </td>
                         <td
-                            colSpan={3}>
+                            colspan={3}>
                             <nobr>管理部經理</nobr>
                         </td>
                         <td
-                            colSpan={3}>
+                            colspan={3}>
                             <nobr>生管</nobr>
                         </td>
                         <td
-                            colSpan={3}>
+                            colspan={3}>
                             <nobr>製表</nobr>
                         </td>
                     </tr>
@@ -1221,25 +1221,25 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={3} rowSpan={2}>
+                            colspan={3} rowspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={3} rowSpan={2}>
+                            colspan={3} rowspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={3} rowSpan={2}>
+                            colspan={3} rowspan={2}>
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={3} rowSpan={2}>
+                            colspan={3} rowspan={2}>
                             <nobr>蔡淑薇</nobr>
                         </td>
                     </tr>
                     <tr >
                         <td
-                            rowSpan={16}>
+                            rowspan={16}>
                             <nobr> 檢查 入庫 託工</nobr>
                         </td>
                         <td
@@ -1276,11 +1276,11 @@ class DetailTable extends React.Component {
                             <nobr>&nbsp;</nobr>
                         </td>
                         <td
-                            colSpan={5}>
+                            colspan={5}>
                             <nobr>正嘜</nobr>
                         </td>
                         <td
-                            colSpan={5}>
+                            colspan={5}>
                             <nobr>側嘜</nobr>
                         </td>
                         <td>
@@ -1315,13 +1315,13 @@ class DetailTable extends React.Component {
                         <td>
                             <nobr>&nbsp;</nobr>
                         </td>
-                        <td colSpan={5}>
+                        <td colspan={5}>
                             <nobr>BAILEY'S </nobr>
                         </td>
-                        <td colSpan={5}>
+                        <td colspan={5}>
                             <nobr>SOLID BAR</nobr>
                         </td>
-                        <td colSpan={9}>
+                        <td colspan={9}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
@@ -1329,13 +1329,13 @@ class DetailTable extends React.Component {
                         <td>
                             <nobr>&nbsp;</nobr>
                         </td>
-                        <td colSpan={5}>
+                        <td colspan={5}>
                             <nobr>OAKLAND</nobr>
                         </td>
-                        <td colSpan={5}>
+                        <td colspan={5}>
                             <nobr>P.NO.:</nobr>
                         </td>
-                        <td colSpan={9}>
+                        <td colspan={9}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
@@ -1343,7 +1343,7 @@ class DetailTable extends React.Component {
                         <td>
                             <nobr>&nbsp;</nobr>
                         </td>
-                        <td colSpan={5}>
+                        <td colspan={5}>
                             <nobr>C/NO.:</nobr>
                         </td>
                         <td >
@@ -1361,7 +1361,7 @@ class DetailTable extends React.Component {
                         <td >
                             <nobr>&nbsp;</nobr>
                         </td>
-                        <td colSpan={9}>
+                        <td colspan={9}>
                             <nobr>&nbsp;</nobr>
                         </td>
                     </tr>
@@ -1369,7 +1369,7 @@ class DetailTable extends React.Component {
                         <td>
                             <nobr>&nbsp;</nobr>
                         </td>
-                        <td colSpan={5}>
+                        <td colspan={5}>
                             <nobr>MADE IN TAIWAN</nobr>
                         </td>
                         <td >
@@ -1419,7 +1419,7 @@ class DetailTable extends React.Component {
                         <td>
                             <nobr>&nbsp;</nobr>
                         </td>
-                        <td colSpan={5}>
+                        <td colspan={5}>
                             <nobr>R.O.C.</nobr>
                         </td>
                         <td >

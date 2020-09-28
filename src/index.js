@@ -7,7 +7,7 @@ import Dashboard from "./page/dashboard/index"
 import Statistics from "./page/statistics/index"
 import History from "./page/history/index"
 import Login from './page/login/index'
-
+import DispatchTabs from './page/dispatch/tabs'
 import {
   BrowserRouter as Router,
   Switch,
@@ -65,6 +65,11 @@ class App extends React.Component {
 
           <Route path={`${process.env.PUBLIC_URL}/login`} >
             <Login title={"登入"} handleChangeValue={this.handleChangeValue} />
+          </Route>
+          <Route path={`${process.env.PUBLIC_URL}/dispatch`} >
+            <Sliderbar value={this.state.value}>
+              <DispatchTabs title={"工單簽核"} handleChangeValue={this.handleChangeValue} />
+            </Sliderbar>
           </Route>
         </Switch>
       </Router>

@@ -15,13 +15,37 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 
 import Container from '@material-ui/core/Container';
+import * as request from '../../request/index'
+import Alert from './alert'
 
 class Login extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            account: undefined,
+            password: undefined,
+            result: undefined
+        }
+    }
 
-    handleSubmit = (data) =>{
-        console.log(data)
+    handleClose = () => {
+        this.setState({ result: undefined })
+    };
 
-        window.location.href = "/"
+    handleSubmit = async (event) => {
+        event.preventDefault();
+        console.log(this.state)
+
+        let result = await request.login({ 'account': this.state.account, 'password': this.state.password })
+        console.log(result)
+        if (result.type === 0) {
+            setTimeout(function () { window.location.href = '/soleil/dashboard' }, 1500);
+        }
+        let info = await request.info()
+        console.log(info)
+
+        this.setState({ result: <Alert open={true} data={result} handleClose={this.handleClose} /> })
+
     }
 
     render() {
@@ -37,9 +61,9 @@ class Login extends React.Component {
                     <Typography component="h1" variant="h5">
                         日鉅管理後台
                     </Typography>
-                    <form className={classes.form}  onSubmit={this.handleSubmit} >
+                    <form className={classes.form} onSubmit={this.handleSubmit} >
                         <Grid container spacing={2}>
-                            
+
                             <Grid item xs={12}>
                                 <TextField
                                     variant="outlined"
@@ -49,6 +73,7 @@ class Login extends React.Component {
                                     label="帳號"
                                     name="account"
                                     autoComplete="account"
+                                    onInput={e => this.setState({ account: e.target.value })}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -61,6 +86,7 @@ class Login extends React.Component {
                                     type="password"
                                     id="password"
                                     autoComplete="current-password"
+                                    onInput={e => this.setState({ password: e.target.value })}
                                 />
                             </Grid>
                             {/* <Grid item xs={12}>
@@ -77,12 +103,14 @@ class Login extends React.Component {
                             color="primary"
                             className={classes.submit}
                         >
-                           登入
+                            登入
           </Button>
-                        
+
                     </form>
                 </div>
-                
+                {this.state.result}
+
+
             </Container>
         );
     }

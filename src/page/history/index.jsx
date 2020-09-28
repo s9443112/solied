@@ -1,12 +1,19 @@
 import React from 'react';
 import { withStyles } from "@material-ui/core/styles";
 import style from './style'
-import { Table, TableBody, TableCell, TableHead, TableRow, Grid, TextField, Button, Paper, Container, Dialog, Slide,AppBar,Toolbar,Typography  } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableHead, TableRow, Grid, TextField, Button, Paper, Container, Dialog, Slide, AppBar, Toolbar, Typography } from '@material-ui/core';
 import Title from '../../libs/title'
 import InfoIcon from '@material-ui/icons/Info';
 import DetailTable from './table'
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+
+import * as request from '../../request/index'
+
 // Generate Order Data
 function createData(id, order, item, dispatch, start_time, end_time) {
     return { id, order, item, dispatch, start_time, end_time };
@@ -25,16 +32,47 @@ class History extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            open: false
+            open: false,
+            rows: [],
+            machine_html: undefined
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        const { classes } = this.props
         this.props.handleChangeValue(this.props.title)
+        let data = await request.get_order()
+        let rows = []
+        for (let i in data) {
+            rows.push(createData(i, data[i]["_id"], data[i].product_name, data[i].total_count, data[i].start_date, data[i].shipment))
+        }
+        this.setState({ rows: rows })
+
+        let machine_html = []
+        let machine = await request.get_machine()
+        for (let i in machine) {
+            console.log(machine[i].name)
+            machine_html.push(<MenuItem key={i} value={machine[i].name}>{machine[i].name}</MenuItem>)
+        }
+        this.setState({
+            machine_html: <FormControl className={classes.formControl}>
+                <InputLabel id="demo-machine-select-label">機器</InputLabel>
+                <Select
+                    labelId="machine-select-label"
+                    id="machine-select"
+
+                >
+                    {machine_html}
+                </Select>
+            </FormControl>
+        })
+
     }
 
-    handleOpen = () => {
+    handleOpen = (index) => {
         this.setState({ open: true })
+        console.log(index)
+
     };
 
     handleClose = () => {
@@ -43,40 +81,51 @@ class History extends React.Component {
 
     render() {
         const { classes } = this.props;
+        console.log(this.state.rows)
         return (
             <React.Fragment>
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={6}>
                         <Grid item xs={12} sm={12} md={12} lg={12}>
                             <Paper className={classes.paper}>
-                                <Grid container spacing={3}>
-                                    <Grid item xs={12} sm={6} md={4} lg={4}>
-                                        <TextField
-                                            id="datetime-local"
-                                            label="Next appointment"
-                                            type="datetime-local"
-                                            defaultValue="2017-05-24T10:30"
-                                            className={classes.textField}
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                        />
+                                <Grid container spacing={1}>
+                                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                                        <FormControl className={classes.formControl}>
+                                            
+                                            <TextField
+                                                id="datetime-local"
+                                                label="開始時間"
+                                                type="datetime-local"
+                                                defaultValue="2017-05-24T10:30"
+                                                className={classes.textField}
+                                                InputLabelProps={{
+                                                    shrink: true,
+                                                }}
+                                            />
+                                        </FormControl>
+                                        <FormControl className={classes.formControl}>
+                                            
+                                            <TextField
+                                                id="datetime-local"
+                                                label="結束時間"
+                                                type="datetime-local"
+                                                defaultValue="2017-05-24T10:30"
+                                                className={classes.textField}
+                                                InputLabelProps={{
+                                                    shrink: true,
+                                                }}
+                                            />
+                                        </FormControl>
+                                        {this.state.machine_html}
+                                        <Button className={classes.button} variant="contained" color="primary">搜尋</Button>
                                     </Grid>
 
-                                    <Grid item xs={12} sm={6} md={4} lg={4}>
-                                        <TextField
-                                            id="datetime-local"
-                                            label="Next appointment"
-                                            type="datetime-local"
-                                            defaultValue="2017-05-24T10:30"
-                                            className={classes.textField}
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                        />
+
+                                    <Grid item xs={12} sm={6} md={2} lg={2}>
+                                        
                                     </Grid>
-                                    <Grid item xs={12} sm={6} md={4} lg={4}>
-                                        <Button className={classes.button} variant="contained" color="primary">搜尋</Button>
+                                    <Grid item xs={12} sm={6} md={2} lg={2}>
+                                        
                                     </Grid>
                                 </Grid>
                             </Paper>
@@ -96,14 +145,14 @@ class History extends React.Component {
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        {rows.map((row) => (
+                                        {this.state.rows.map((row) => (
                                             <TableRow key={row.id}>
                                                 <TableCell>{row.order}</TableCell>
                                                 <TableCell>{row.item}</TableCell>
                                                 <TableCell>{row.dispatch}</TableCell>
                                                 <TableCell>{row.start_time}</TableCell>
                                                 <TableCell>{row.end_time}</TableCell>
-                                                <TableCell><InfoIcon onClick={this.handleOpen} /></TableCell>
+                                                <TableCell><InfoIcon onClick={() => this.handleOpen(row.order)} /></TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>

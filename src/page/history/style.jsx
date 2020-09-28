@@ -4,8 +4,9 @@
 
 const useStyles = (theme) => ({
     button: {
-        marginTop: theme.spacing(1),
-        marginLeft: theme.spacing(1),
+        marginTop: theme.spacing(3),
+        marginLeft: theme.spacing(20),
+        minWidth: 200,
     },
     paper: {
         padding: theme.spacing(2),
@@ -35,6 +36,11 @@ const useStyles = (theme) => ({
         marginLeft: theme.spacing(2),
         flex: 1,
     },
+    formControl: {
+        margin: theme.spacing(2),
+        minWidth: 200,
+        marginLeft: theme.spacing(3),
+      },
 });
 
 

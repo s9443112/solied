@@ -40,14 +40,15 @@ async function post(url, data, type = "POST") {
             data: data,
             contentType: "application/json",
             dataType: "json",
+            crossDomain: true,
             xhrFields: { withCredentials: true },
             method: type
         });
     } catch (error) {
         console.log(error)
         console.log(pad + url)
-        // checkLoginError(error);
-        throw error;
+        return checkLoginError(error);
+        
     }
 }
 
@@ -64,13 +65,26 @@ async function get(url, params = {}) {
         }
         return await $.ajax({
             url: URL.href,
+            crossDomain: true,
+            xhrFields: { withCredentials: true },
+            mode: "cors",
+            credentials: "include",
         });
-        
+
     } catch (error) {
         console.log(error)
         console.log(pad + url)
-        throw error;
+        checkLoginError(error);
+        // throw error;
     }
+}
+
+function checkLoginError(error){
+    let result = {
+        "type": 2,
+        "error": error
+    }
+    return result
 }
 
 
@@ -80,15 +94,39 @@ export function use_getCookieByName(key) {
 }
 
 
-export async function login(data){
-    return (await post("/login",data))
+export async function login(data) {
+    return (await post("/api/login", data))
+}
+export async function info() {
+    return (await get("/api/info"))
+}
+export async function get_machine() {
+    return (await get("/api/machine"))
+}
+export async function get_machine_status() {
+    return (await get("/api/get_machine_status"))
+}
+export async function get_machine_power() {
+    return (await get("/api/get_machine_power"))
 }
 
-export async function get_raw_data() {
-    return (await get("/get_raw_data")).data
+
+export async function get_order() {
+    return (await get("/api/get_order"))
+}
+export async function get_order_content() {
+    return (await get("/api/get_order_content"))
+}
+export async function get_order_content_id(data) {
+    return (await post("/api/get_order_content_id",data))
 }
 
-export async function get_history() {
-    return (await get("/history")).data
+
+export async function get_user() {
+    return (await get("/api/get_user"))
+}
+
+export async function insert_dispatch(data) {
+    return (await post("/api/insert_dispatch",data))
 }
 
